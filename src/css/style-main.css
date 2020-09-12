@@ -5,16 +5,12 @@ when dealing with padding margin etc it goes clock wise starting with: top, righ
 0, 0, 0, 0
 
 */
-header, body {
-  display: block; }
-
-  .body {
-    background-color: #2e3441;
-  }
+.body {
+  background-color: #2e3441; }
 
 /*header*/
 header {
-  background-color:#3b4253;
+  background-color: #3b4253;
   /*width: 100%;*/
   position: sticky;
   color: #f0f0f0;
@@ -36,7 +32,6 @@ nav a {
 
 li a:hover {
   color: #63574b; }
-  
 
 .logo {
   display: block;
@@ -60,8 +55,7 @@ a.fill-div {
 /* Featured Article */
 #featuredArticle {
   height: 400px;
-  background-image: linear-gradient(to right, #f8a255 , #ac3b61);
-}
+  background-image: linear-gradient(to right, #f8a255, #ac3b61); }
 
 #featuredArticle {
   padding-bottom: 1m; }
@@ -85,41 +79,20 @@ a.fill-div {
   /* TODO: this isn't doing anything right now. want to have the title a little lower (bootstrap is prob making hard to this css to do anything) */
   text-align: center !important; }
 
-/* 
-#featuredArticleImage{
-    max-width: 80% !important;
-    width: 500px !important;
-  } */
-/* Article 2x2 css */
-.columns {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  margin: 20px 0;
-  padding: 50px; }
-
-.column {
-  flex: 1;
-  background-color: #80a0c2;
-  color: #f0f0f0;
-  margin: 2px;
-  margin-right: 5%;
-  margin-left: 5%;
-  padding: 10px; 
-  border-radius: 10px;
-}
+.padding {
+  padding-top: 2em !important;
+  padding-bottom: 2em !important; }
 
 /* Footer */
 footer {
   font-style: italic;
   text-align: center;
-  background-color:#181b22;
+  background-color: #181b22;
   color: #888888;
   font-family: "Courier New", Arial, sans-serif;
   margin-left: 1em;
-  margin-right: 1em; 
-  flex-shrink: 0;
-}
+  margin-right: 1em;
+  flex-shrink: 0; }
 
 footer a {
   text-decoration: none;
@@ -128,6 +101,5 @@ footer a {
 footer a:hover {
   color: #dfa76f; }
 
-  @media all and (max-width : 800px) {
-    /* TODO */
-  }
+@media all and (max-width: 800px) {
+  /* TODO */ }
