@@ -127,7 +127,12 @@ li a:hover {
     margin-left: 5%;
     padding: 10px;  
   }
-  
+
+  .readColor {
+    background-color: #e5e9f0;
+    /* color: aliceblue; */
+
+  }
 
 
   /* Footer */
