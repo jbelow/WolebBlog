@@ -117,22 +117,3 @@ footer a {
 
 footer a:hover {
   color: #dfa76f; }
-
-  #testing {
-    background-color: aqua;
-  }
-
-  @media all and (max-width : 800px) {
-
-    #testing {
-      display: none;
-
-    }
-
-    .headerContainer {
-      padding-left: 3%;
-      padding-right: 3%; 
-    
-    }
-
-  }
