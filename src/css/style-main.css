@@ -8,9 +8,13 @@ when dealing with padding margin etc it goes clock wise starting with: top, righ
 header, body {
   display: block; }
 
+  .body {
+    background-color: #2e3441;
+  }
+
 /*header*/
 header {
-  background-color: rgba(243, 230, 220, 0.918);
+  background-color:#3b4253;
   /*width: 100%;*/
   position: sticky;
   color: #f0f0f0;
@@ -21,7 +25,7 @@ nav ul {
 
 nav a {
   float: left;
-  color: #888888;
+  color: #ffffff;
   text-decoration: none;
   font-family: 'Share Tech Mono', monospace "Bookman Old Style", Arial, sans-serif;
   font-size: 1.5em;
@@ -32,6 +36,7 @@ nav a {
 
 li a:hover {
   color: #63574b; }
+  
 
 .logo {
   display: block;
@@ -55,7 +60,8 @@ a.fill-div {
 /* Featured Article */
 #featuredArticle {
   height: 400px;
-  background-color: #355C7D; }
+  background-image: linear-gradient(to right, #f8a255 , #ac3b61);
+}
 
 #featuredArticle {
   padding-bottom: 1m; }
@@ -94,22 +100,26 @@ a.fill-div {
 
 .column {
   flex: 1;
-  background-color: #355C7D;
+  background-color: #80a0c2;
   color: #f0f0f0;
   margin: 2px;
   margin-right: 5%;
   margin-left: 5%;
-  padding: 10px; }
+  padding: 10px; 
+  border-radius: 10px;
+}
 
 /* Footer */
 footer {
   font-style: italic;
   text-align: center;
-  background-color: rgba(243, 230, 220, 0.918);
+  background-color:#181b22;
   color: #888888;
   font-family: "Courier New", Arial, sans-serif;
   margin-left: 1em;
-  margin-right: 1em; }
+  margin-right: 1em; 
+  flex-shrink: 0;
+}
 
 footer a {
   text-decoration: none;
@@ -117,3 +127,7 @@ footer a {
 
 footer a:hover {
   color: #dfa76f; }
+
+  @media all and (max-width : 800px) {
+    /* TODO */
+  }
