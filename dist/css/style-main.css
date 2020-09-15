@@ -5,6 +5,9 @@ when dealing with padding margin etc it goes clock wise starting with: top, righ
 0, 0, 0, 0
 
 */
+.testingBox {
+  background-color: #f0f0f0; }
+
 .body {
   background-color: #2e3441; }
 

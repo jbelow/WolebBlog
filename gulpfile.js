@@ -1,5 +1,3 @@
-
-
 // IMPORTS
 const gulp = require('gulp');
 const babel = require('gulp-babel');
@@ -11,11 +9,6 @@ const sass = require('gulp-sass');
 function testTask(done){
     console.log("Test task running...");
     done();
-}
-
-function copy(done){
-	gulp.src("src/index.html").pipe(gulp.dest("dist/"));
-	done();
 }
 
 function babelTask(done){
@@ -42,7 +35,7 @@ function processSass(done){
 }
 
 function copy(done){
-	gulp.src("src/index.html").pipe(gulp.dest("dist/"));
+	gulp.src("src/*.html").pipe(gulp.dest("dist/"));
 	gulp.src("src/css/style-main.css").pipe(gulp.dest("dist/css/"));
 	done();
 }

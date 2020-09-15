@@ -1,10 +1,36 @@
+
+// where info on the first part of of this file:
+// https://www.remwebdevelopment.com/blog/javascript/gulp-sass-and-bootstrap.html
+
+//Override the default theme colors for bootstrap:
+// Courtesy of themestr at: https://themestr.app/theme
+
+// import web fonts
 @import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
-/* NOTES:
+// can use a var for this to add to the classes etc
 
-when dealing with padding margin etc it goes clock wise starting with: top, right, botton, left
-0, 0, 0, 0
+// if you aren't using Bootstrap grids, you can set this variable to false:
+// $enable-grid-classes:true;
 
-*/
+// override the theme colors
+// $primary:#2f3c48;
+// $secondary:#6f7f8c;
+// $success:#3e4d59;
+// $danger:#cc330d;
+// $info:#5c8f94;
+// $warning:#6e9fa5;
+// $light:#eceeec;
+// $dark:#1e2b37;
+
+
+//because this is in the scss it will be added to my css when exporting 
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+
+
+.testingBox {
+  background-color: #f0f0f0;
+}
 
 
 .body {
@@ -88,6 +114,9 @@ a.fill-div {
   padding-top: 2em !important;
   padding-bottom: 2em !important;
 }
+
+
+
 
 /* Footer */
 footer {
