@@ -21,9 +21,28 @@
 // $warning:#6e9fa5;
 // $light:#eceeec;
 // $dark:#1e2b37;
-$white: #ffffff;
-$darkBlue: #2e3441;
+
 $darkBlueShadow: #101216;
+
+//Color Palette 1
+$skyBlue: #355C7D;
+$purple: #725A7A;
+$darkPink: #C56C86;
+$pink: #FF7582;
+
+//Color Patette 2
+$darkBlue2: #2e3441;
+$mutedDarkBlue2: #3b4253;
+$red2: #c16069;
+$Green2: #a2bf8a;
+$yellow2: #edcc87;
+$blue2: #80a0c2;
+$purple2: #b58dae;
+$lightBlue2: #86c0d1;
+$muteWhite2: #e5e9f0;
+
+
+
 
 
 //because this is in the scss it will be added to my css when exporting 
@@ -80,26 +99,17 @@ header a:hover {
 
 /* Featured Article */
 #featuredArticle {
-  height: 400px;
+  height: 15em ;
   background-image: linear-gradient(to right, #f8a255 , #ac3b61);
+  text-align: center;
+  color: white;
+  font-family: 'Share Tech Mono', monospace;
+  line-height: 26pt;
 }
 
-#featuredArticle {
-  padding-bottom: 1m; }
-
-#featuredArticleHover:hover {
+#featuredArticle:hover {
   /* text-decoration: none; */
   color: rgb(253, 255, 255); }
-
-#featuredArticleConentContainer {
-  height: 400px;
-  margin-right: 300px;
-  margin-left: 300px;
-  padding: 0, 15px, 0, 15px;
-  text-align: center;
-  color: #f0f0f0;
-  font-family: 'Share Tech Mono', monospace;
-  line-height: 26pt; }
 
 #featuredArticleTitle {
   /* TODO: make underline go away and have text change color  */
@@ -111,6 +121,26 @@ header a:hover {
   padding-bottom: 2em !important;
 }
 
+
+/* card grid for aricles */
+
+.card {
+  background-color: $muteWhite2;
+  height: 15em;
+}
+
+.card-footer {
+background-color: $red2;
+}
+.text-muted {
+  color: $muteWhite2 !important;
+
+}
+
+.card-colums {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 
 
 /* Footer */
@@ -133,29 +163,33 @@ footer a:hover {
   color: #dfa76f; }
 
 
-
-
 .article {
-  background-color: $white;
+  background-color: white;
   box-shadow: 0px 0px 10px 2px $darkBlueShadow;
 
 }
 
+  @media screen and (min-width : 810px) {
+    .fixedCardSizeCentered {
+      width: 70%;
+      // height: 50%;
+      align-content: center;
+    }
 
-  @media all and (max-width : 800px) {
-    /* TODO */
   }
 
+  @media screen and (max-width : 800px){
+    .makeGoPoof {
+      display: none;
+    }
+
+  }
 
   @media screen and (max-width: 500px) {
-    .header a {
-      float: none;
-      display: block;
-      text-align: left;
+    .removeMargin {
+      margin-top: none;
+      margin-bottom: none;
     }
     
-    .header-right {
-      float: none;
-    }
   }
 
