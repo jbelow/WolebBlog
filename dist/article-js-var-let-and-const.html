@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simply explained: differences between var, let, and const</title>
+    <script src="js/manipulateCSS.js"></script>
+    <link rel="stylesheet" href="css/style-main.css">
+    <link rel="shortcut icon" href="images/WolebLogo.svg" />
+
+    <link rel="stylesheet" href="css\prism.css">
+    <script src="js\prism.js"></script>
+
+  </head>
+
+  <body>
+
+    <div class="topnav" id="myTopnav">
+        <a href="index.html"> <img src="images/WolebLogo.svg" alt="Woleb
+                Home" class="logo"> </a>
+        <a href="index.html">Acticles</a>
+        <a href="CSSPosts.html">CSS</a>
+        <a href="JSPosts.html">JS</a>
+        <a style="font-size:15px;" class="icon"> <input type="button"
+                id="btnNav" value="&#9776;"> </a>
+    </div>  
+
+
+    <!-- Page Content -->
+    <div class="container article">
+      <div class="readColor">
+
+        <div class="row">
+
+          <!-- Post Content Column -->
+          <div class="col-lg-12">
+
+            <!-- Title -->
+            <h1 class="mt-4">Simply Explained: Differences Between Var, Let, and Const</h1>
+
+            <!-- Author -->
+            <p class="lead">
+              by Joshua Below
+            </p>
+
+            <hr>
+
+            <!-- Date/Time -->
+            <p>Posted on September 21, 2020 at 3:50 PM</p>
+
+            <hr>
+
+            <!-- Post Content -->
+            <p class="lead">In JavaScript in comparison to other languages, you are quite limited with variable types. All the way up until 2015 
+              the only variable type that was available was var. There are a few problems with it though and that's why let and const were introduced. </p>
+
+            <br>
+            <p>NOTE: for extra practice with this topic, copy and paste the code samples into your own js file. This will help with understanding 
+              the different functionality and what will give you an error.
+            </p>
+
+            <br>
+            <h2>Var</h1>
+            <p>First off with var, it is a variable type that is only global or function scoped.  </p>
+            <pre class="language-js">
+<code>// this var any be used anywhere 
+var number = 12;
+
+function newVarFunction() {
+
+//the var word can only be used anywhere in this function
+var word = "hello";
+
+//the number var can be used in here
+//this will give you the number
+console.log(number);
+//this will give you the word
+console.log(word);
+} 
+newVarFunction();
+
+//this will give you the number
+console.log(number);
+//this will NOT give you the word - this is not in the scope of the function 
+console.log(word);</code>
+            </pre>
+
+            <br>  
+
+            <p>This means we are able to use it regardless of where we are inside of that said function or just anywhere if you make it global. 
+              As shown in the if statement, you want to contain your variables inside of for loops it's going to be a bit more difficult with a var.</p>
+
+            <pre class="language-js">
+<code>//the var i can be used inside and outside of the for loop
+  for(var i = 0; i < 10; i++){
+      console.log(i);
+  }
+  console.log(i)</code>
+                </pre>
+
+              <br>
+              <h2>Let</h1>
+                <p>It could be argued that this is fine because you're just redefining the variable anyways if you're using another for loop but 
+                  this is a dangerous way of thinking. At no point in time do you want to have your variables just floating around your code because 
+                  it’s more than likely than it will create problems down the road with variables interfering with one another. </p>
+
+                <br>
+
+                <p>This is where let becomes useful as a variable type that is a block scope. </p>
+
+                <pre class="language-js">
+<code>function NewLetFunction(){
+  //just like with var, the let x is scoped to the function
+  let x = 1;
+
+  for(let i = 0; i < 10; i++){
+      console.log(i);
+  }
+  //this is outside of the block (the for loop) so it doesn't know what i is and you cannot call it here
+  console.log(i);
+
+  //the let x was declared inside of the NewFunction so it is inside of the scope and can be used
+  console.log(x);
+}
+NewLetFunction();
+//Neither x nor i can be called outside of the function becuase it is outside of scope for both of them
+console.log(i);
+console.log(x);
+</code>
+                  </pre>
+
+                  <br>
+                  <p>The best way to remember block scope is to think about the curly braces. Anything that is inside of  {}  is not accessible to anything outside of it. 
+                    This goes with the principle of least responsibility in a way. If part of your code does not need a particular variable than they should have no access 
+                    to it. </p>
+
+
+
+                  <pre class="language-js">
+<code>{
+    // this let is in the scope of these curly braces {}
+    let x = 5;
+
+    //anything in the curly braces does have access
+}
+    //anything outside doesn't have access</code>
+                  </pre>
+                  <br>
+
+
+                  <br>
+                  <h2>Const</h1>
+                  <p>Just like its brother let, const also has global, function, and block scope. Kind of like privates inside of java, 
+                    the const cannot have its value reassigned hence being called const aka consistent. It's not 100% accurate though because 
+                    with arrays some of the data can be altered so there are some instances where is not a true constant. It does protect it 
+                    from being completely reassigned though which is what we will see in the examples.</p>
+
+<pre class="language-js">
+<code>//a const cannot be reassigned
+const count = 732.64;
+
+// this will give an error because you can't set a new value to the const count
+count = 800;</code>
+                    </pre>
+                    <br>
+                    <p>Having a const is a really great way to ensure that you can't change primitive data in your code, but as mentioned before there is a little bit altering you can do with the data. </p>
+
+<pre class="language-js">
+<code>const names = ["Gregory", "Ashley", "Alton"];
+
+//If you want to change an elment you can
+names[2] = "Bobby";
+
+//you can also add to the array
+names.push("Joshua");
+
+//you are not able to reassign the array because it is a const
+names = ["Scott", "Markus", "William"];
+
+//if you want to remove part of the array you can still do this with splice
+names.splice(index, 1);</code>
+                  </pre>
+                  <br>
+                  
+                  <P>In the example, you can see that you are able to make changes to the pieces of the array, add to the array, 
+                    but you are not allowed to reassign the array. Since this shows that it's not a truly unchangeable data type it is 
+                    important to remember how you are interacting with it. In short, There are added restrictions to how you can modify the data but 
+                    it is still possible when using an array.</P>
+
+
+
+                    <hr>
+                    <h2>Conclusion</h2>
+                    <p>There doesn’t seem to be much use left for var - which is used for global and function scope - anymore because you can just use let for global, 
+                      function, and block scope on top of that now. Also, the use of const as a more consistent variable helps with ensuring that primitive data stays 
+                      that way. </p>
+
+                    <br>
+                    <br>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer container-fluid font-small blue">
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">© 2020 Copyright: Woleb</div>
+    </body>
+  </html>

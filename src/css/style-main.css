@@ -7156,13 +7156,14 @@ a.text-dark:hover, a.text-dark:focus {
 
 body {
   background-color: #2e3441;
-  font-family: 'Share Tech Mono', Arial, sans-serif; }
+  font-family: Arial, sans-serif; }
 
 .topnav {
   overflow: hidden;
   background-color: #3b4253;
   display: flex;
-  align-items: center; }
+  align-items: center;
+  font-family: 'Share Tech Mono', Arial, sans-serif; }
 
 .topnav a {
   float: left;

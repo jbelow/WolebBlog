@@ -4,21 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Post Template</title>
-    <link rel="stylesheet" href="css/style-main.css">
     <script src="js/manipulateCSS.js"></script>
+    <link rel="stylesheet" href="css/style-main.css">
+    <link rel="shortcut icon" href="images/WolebLogo.svg" />
+
+    <link rel="stylesheet" href="css\prism.css">
+    <script src="js\prism.js"></script>
 
   </head>
 
   <body>
-
-      <div class="topnav" id="myTopnav">
-        <a href="index.html"> <img src="images/WolebLogo.svg" alt="Woleb Home" class="logo"> </a>
-        <a href="#home" class="active">Acticles</a>
-        <a href="#news">CSS</a>
-        <a href="#news">JS</a>
-        <a href="#about">About</a>
-        <a style="font-size:15px;" class="icon"> <input type="button" id="btnNav" value="&#9776;"> </a>
-      </div>
+    <div class="topnav" id="myTopnav">
+      <a href="index.html"> <img src="images/WolebLogo.svg" alt="Woleb
+              Home" class="logo"> </a>
+      <a href="index.html">Acticles</a>
+      <a href="CSSPosts.html">CSS</a>
+      <a href="JSPosts.html">JS</a>
+      <a style="font-size:15px;" class="icon"> <input type="button"
+              id="btnNav" value="&#9776;"> </a>
+  </div>  
 
 
     <!-- Page Content -->
@@ -58,11 +62,13 @@
               saepe quibusdam sit excepturi nam quia corporis eligendi eos magni
               recusandae laborum minus inventore?</p>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut,
-              tenetur natus doloremque laborum quos iste ipsum rerum obcaecati
-              impedit odit illo dolorum ab tempora nihil dicta earum fugiat.
-              Temporibus, voluptatibus.</p>
+            <pre class="language-js">
+              <code>//a const cannot be reassigned
+const count = 732.64;
 
+// this will give an error because you can't set a new value to the const count
+count = 800;</code>
+            </pre>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos,
               doloribus, dolorem iusto blanditiis unde eius illum consequuntur
               neque dicta incidunt ullam ea hic porro optio ratione repellat

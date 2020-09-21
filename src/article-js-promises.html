@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to JS promises</title>
+    <script src="js/manipulateCSS.js"></script>
+    <link rel="stylesheet" href="css/style-main.css">
+    <link rel="shortcut icon" href="images/WolebLogo.svg" />
+
+    <link rel="stylesheet" href="css\prism.css">
+    <script src="js\prism.js"></script>
+
+  </head>
+
+  <body>
+    <div class="topnav" id="myTopnav">
+      <a href="index.html"> <img src="images/WolebLogo.svg" alt="Woleb
+              Home" class="logo"> </a>
+      <a href="index.html">Acticles</a>
+      <a href="CSSPosts.html">CSS</a>
+      <a href="JSPosts.html">JS</a>
+      <a style="font-size:15px;" class="icon"> <input type="button"
+              id="btnNav" value="&#9776;"> </a>
+  </div>  
+
+
+    <!-- Page Content -->
+    <div class="container article">
+      <div class="readColor">
+
+        <div class="row">
+
+          <!-- Post Content Column -->
+          <div class="col-lg-12">
+
+            <!-- Title -->
+            <h1 class="mt-4">Introduction To JS Promises</h1>
+
+            <!-- Author -->
+            <p class="lead">
+                by Joshua Below
+            </p>
+
+
+            <hr>
+
+            <!-- Date/Time -->
+            <p>Posted on September 20, 2020 at 3:40 PM</p>
+
+
+            <hr>
+
+            <!-- Post Content -->
+            <p class="lead">A promise is a way to process asynchronous operations. An example of when you would want to use this is if you are grabbing different 
+                pieces of information from a database and you want them to all load at the same time. </p>
+
+                <p>A simple way to think about promises is in the world when you ask a friend to promise that they will help you get something. 
+                    First, you have to ask your friend if they are willing to help you (this is calling the promise or pending) then you have to wait for their response. 
+                    Your friend will most likely get back to you and say that they are able or unable to help (this would be fulfilled or rejected).</p>
+                <p>You might be requesting information from the database and well it's pending the database is checking if you can fulfill the tasks that you requested. 
+                    If it cannot find the correct data it will reject the request, but if it can successfully find it it will be fulfilled. </p>
+
+                <br>
+
+                <p>To create a simple example for a promise, we can use an if else statement to represent if a file was successful uploading or not. </p>
+
+            <pre class="language-js">
+<code>//using a function is not needed but a way to show how you can use one to call a promises
+function MathPromise() {
+    let numberOne = 1;
+    let numberTwo = 5;
+
+    //you can either set a promise to a variable or just return it like we are here
+    //here we are either passing resolve or reject when the function is being called
+    return new Promise((resolve, reject) => {
+        if (numberOne + numberTwo === 15){
+            resolve ({
+                message: "10 and 5 added = 15!"
+            })
+        } else {
+            reject({
+                message: "the numbers didn't equal 15 :("
+            })
+        }
+    })
+}
+
+//this is where we check to see if it passed or not with .then or .catch
+//.then means now that we have a successful request what do should the code do now
+//.catch means that there was an erorr and it was rejected and the code needs to know what to do now
+MathPromise().then(message => {
+    console.log(message);
+}).catch( failed => {
+    console.log(failed.message);
+
+})</code>
+            </pre>
+
+            <p>You can also have multiple promises and have them processed all together in a group (If you're familiar with callbacks, 
+                then using promises fixes the problem of callback hell).</p>
+
+            <pre class="language-js">
+<code>//here we are using a variable for the new promise and 
+const uploalNewBlogPostOne = new Promise((resolve, reject) => {
+    //this is where you would want all of your aweseom code!
+    resolve("upload was successful");
+
+})
+
+const uploadSong = new Promise((resolve, reject) => {
+    resolve("upload was successful");
+})
+
+const uploadVideo = new Promise((resolve, reject) => {
+    reject("upload failed");
+    // resolve("upload was successful");
+})
+
+//you can call one promise at a time like here
+Promise({
+    uploalNewBlogPostOne
+}).then(messages => {
+    console.log(messages);
+  }).catch(messages => {
+      console.log(messages);
+  })
+
+//you can also call more than one in the same way 
+Promise.allSettled([
+    uploalNewBlogPostOne,
+    uploadSong,
+    uploadVideo
+  ]).then(messages => {
+    console.log(messages);
+  }).catch(messages => {
+      console.log(messages);
+  })</code>
+            </pre>
+            <br>
+
+            <p>This is the simple syntax for creating promises. There are of course more options for now put:</p>
+            <p>Promise.all()</p>
+            <p>Gives an array of all the inputs from the promises if they all are resolved</p>
+            <br>
+            <p>Promise.allSettled()</p>
+            <p> Gives an array of all the inputs from the promises regardless if they are resolved or rejected.</p>
+            <br>
+            <p>Promise.race()</p>
+            <p>As it suggests, the race() is used for if you want to have the return as soon as the first promise has completed.</p>
+            <br>
+
+            <p>There are a few more, but from my observations these are the main ones to use.</p>
+            
+            
+            
+            <h2>conclusion</h2>
+            <p>There are a lot of amazing ways to use call back Loops but this is the beginning information about how do you get started. 
+                A simple way that I remember how they work is to think of them as upgraded if-then statements. If it is successful, then do the following code, 
+                if it fails then throw an error or try to run again.Top graded portion of a promise is how they can have multiple promises running at the same time 
+                and more functionality with how they can work. There is obviously more complexity comparatively to an if else statement, but from a more simple 
+                standpoint, this is how they work.</p>
+
+            
+            <p>To understand a concept fully I find it helpful to look at multiple resources and if you're interested in continuing to look more into promises I suggest looking into
+                <a href="https://www.youtube.com/watch?v=DHvZLI7Db8E">JavaScript Promises In 10 Minutes</a>  
+                and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises ">Using Promises</a> which is where I originally learned the information from. 
+            </p>
+                <br>
+                <br>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer container-fluid font-small blue">
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">© 2020 Copyright: Woleb</div>
+    </body>
+  </html>
